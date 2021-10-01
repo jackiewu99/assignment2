@@ -66,3 +66,22 @@ Array.prototype.myEvery = function(callbackFn) {
         }
     }
 };
+
+// REDUCE //
+Array.prototype.myReduce = function(callbackFn,prev) {
+    let sum = 0;
+    if (prev === undefined)
+    {
+        sum = 0;
+    }
+    else
+    {
+        sum = 0 + prev;
+    }
+    for(let i = 0;i < this.length;i++)
+    {
+        if(this[i] === undefined) continue;
+        sum = callbackFn(sum,this[i]);
+    }
+    return sum;
+};
