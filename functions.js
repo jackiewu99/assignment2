@@ -34,3 +34,19 @@ Array.prototype.myFilter = function(callbackFn) {
     }
     return filterArr;
 };
+
+// SOME //
+Array.prototype.mySome = function(callbackFn) {
+    for(let i = 0;i < this.length;i++)
+    {
+        if(this[i] === undefined) continue;
+        if(callbackFn(this[i],i, this) === true)
+        {
+            return true;
+        }
+        if(i === (this.length - 1))
+        {
+            return false;
+        }
+    }
+};
