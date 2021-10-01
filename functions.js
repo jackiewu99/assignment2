@@ -101,3 +101,15 @@ Array.prototype.myIncludes = function(...arg) {
         }
     }
 };
+
+// INDEXOF //
+Array.prototype.myIndexOf = function(value) {
+    for(let i = 0;i < this.length;i++)
+    {
+        if(this[i] === value)
+        {
+            return i;
+        }
+    }
+    return -1;
+};
