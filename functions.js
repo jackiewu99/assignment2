@@ -85,3 +85,19 @@ Array.prototype.myReduce = function(callbackFn,prev) {
     }
     return sum;
 };
+
+// INCLUDES //
+Array.prototype.myIncludes = function(...arg) {
+    for(let i = 0;i < this.length;i++)
+    {
+        if(this[i] === undefined) continue;
+        if(this[i] === arg[i])
+        {
+            return true;
+        }
+        if(i === this.length - 1)
+        {
+            return false;
+        }
+    }
+};
