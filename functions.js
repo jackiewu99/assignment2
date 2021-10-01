@@ -18,3 +18,19 @@ Array.prototype.myMap = function(callbackFn) {
     }
     return arrMap;
 };
+
+// FILTER //
+Array.prototype.myFilter = function(callbackFn) {
+    let filterArr = [...this];
+    for(let i = 0;i < filterArr.length;i++)
+    {
+        if(filterArr[i] === undefined) continue;
+
+        if(callbackFn(filterArr[i],i, filterArr) === false)
+        {
+            filterArr.splice(i,1);
+            i--;
+        }
+    }
+    return filterArr;
+};
