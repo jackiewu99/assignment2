@@ -1,4 +1,4 @@
-
+const arr = [6,10,50,30,5];
 //For each//
 Array.prototype.myEach = function(callbackFn) {
     for(let i = 0;i < this.length;i++)
@@ -87,11 +87,20 @@ Array.prototype.myReduce = function(callbackFn,prev) {
 };
 
 // INCLUDES //
-Array.prototype.myIncludes = function(...arg) {
-    for(let i = 0;i < this.length;i++)
+Array.prototype.myIncludes = function(value,index) {
+    let i = 0;
+    if (index === undefined)
+    {
+        i = 0;
+    }
+    else
+    {
+        i = 0 + index;
+    }
+    for(i;i < this.length;i++)
     {
         if(this[i] === undefined) continue;
-        if(this[i] === arg[i])
+        if(this[i] === value)
         {
             return true;
         }
@@ -101,6 +110,12 @@ Array.prototype.myIncludes = function(...arg) {
         }
     }
 };
+
+console.log("myIncludes: ")
+console.log(arr.myIncludes(6,1));
+
+console.log("includes: ")
+console.log(arr.includes(6,1));
 
 // INDEXOF //
 Array.prototype.myIndexOf = function(value) {
