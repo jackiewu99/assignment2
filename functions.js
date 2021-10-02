@@ -139,3 +139,11 @@ Array.prototype.myLastIndexOf = function(value) {
     }
     return -1;
 };
+
+// KEYS //
+Object.grabKeys = function(obj) {
+    const myArr = [];
+    for (let name in obj)
+        myArr.push(name);
+    return myArr;
+};
