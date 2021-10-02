@@ -127,3 +127,15 @@ Array.prototype.myPush = function(...args) {
         }   
         return this.length
     };
+
+    // LASTINDEXOF //
+Array.prototype.myLastIndexOf = function(value) {
+    for(let i = this.length - 1;i > 0;i--)
+    {
+        if(this[i] === value)
+        {
+            return i;
+        }
+    }
+    return -1;
+};
