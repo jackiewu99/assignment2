@@ -1,4 +1,4 @@
-const arr = [6,10,50,30,5,50,110];
+
 //For each//
 Array.prototype.myEach = function(callbackFn) {
     for(let i = 0;i < this.length;i++)
@@ -181,3 +181,4 @@ Object.grabValues = function(obj) {
         myArr.push(obj[name]);
     return myArr;
 };
+
