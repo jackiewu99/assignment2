@@ -1,4 +1,4 @@
-const arr = [6,10,50,30,5];
+const arr = [6,10,50,30,5,50,110];
 //For each//
 Array.prototype.myEach = function(callbackFn) {
     for(let i = 0;i < this.length;i++)
@@ -111,15 +111,18 @@ Array.prototype.myIncludes = function(value,index) {
     }
 };
 
-console.log("myIncludes: ")
-console.log(arr.myIncludes(6,1));
-
-console.log("includes: ")
-console.log(arr.includes(6,1));
-
 // INDEXOF //
-Array.prototype.myIndexOf = function(value) {
-    for(let i = 0;i < this.length;i++)
+Array.prototype.myIndexOf = function(value,index) {
+    let i = 0;
+    if (index === undefined)
+    {
+        i = 0;
+    }
+    else
+    {
+        i = 0 + index;
+    }
+    for(i;i < this.length;i++)
     {
         if(this[i] === value)
         {
@@ -128,7 +131,6 @@ Array.prototype.myIndexOf = function(value) {
     }
     return -1;
 };
-
 
 // PUSH //
 Array.prototype.myPush = function(...args) {
@@ -144,8 +146,17 @@ Array.prototype.myPush = function(...args) {
     };
 
     // LASTINDEXOF //
-Array.prototype.myLastIndexOf = function(value) {
-    for(let i = this.length - 1;i > 0;i--)
+Array.prototype.myLastIndexOf = function(value,index) {
+    let i = this.length - 1;
+    if (index === undefined)
+    {
+        i = this.length - 1;
+    }
+    else
+    {
+        i = 0 + index;
+    }
+    for(i;i > 0;i--)
     {
         if(this[i] === value)
         {
